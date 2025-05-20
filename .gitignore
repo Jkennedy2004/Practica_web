@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+
+# Archivos de entorno
+.env
+
+# Archivos temporales y del sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de salida o build
+dist/
+build/
+
+# Logs
+*.log
