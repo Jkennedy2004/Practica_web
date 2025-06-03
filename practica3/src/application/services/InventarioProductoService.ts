@@ -6,12 +6,14 @@ import { IInventarioProductoRepository } from '../../domain/interfaces/IInventar
 import { InventarioProducto } from '../../domain/entities/inventarioProducto';
 
 export class InventarioProductoService {
-  private agregarStockUseCase: AgregarStockUseCase;
-  private consultarInventarioUseCase: ConsultarInventarioUseCase;
-  private actualizarStockUseCase: ActualizarStockUseCase;
-  private verificarStockMinimoUseCase: VerificarStockMinimoUseCase;
+  private readonly agregarStockUseCase: AgregarStockUseCase;
+  private readonly consultarInventarioUseCase: ConsultarInventarioUseCase;
+  private readonly actualizarStockUseCase: ActualizarStockUseCase;
+  private readonly verificarStockMinimoUseCase: VerificarStockMinimoUseCase;
+  private readonly inventarioRepository: IInventarioProductoRepository;
 
   constructor(inventarioRepository: IInventarioProductoRepository) {
+    this.inventarioRepository = inventarioRepository;
     this.agregarStockUseCase = new AgregarStockUseCase(inventarioRepository);
     this.consultarInventarioUseCase = new ConsultarInventarioUseCase(inventarioRepository);
     this.actualizarStockUseCase = new ActualizarStockUseCase(inventarioRepository);
@@ -33,7 +35,7 @@ export class InventarioProductoService {
       ubicacion
     );
     
-    return await this.agregarStockUseCase['inventarioRepository'].save(inventario);
+    return await this.inventarioRepository.save(inventario);
   }
 
   async agregarStock(inventarioId: string, cantidad: number): Promise<InventarioProducto> {

@@ -1,26 +1,30 @@
 {
-  "name": "practica_web",
+  "name": "inventario-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "API REST para gestión de inventario con arquitectura N-Capas",
+  "main": "dist/app.js",
   "scripts": {
-    "dev": "tsnd --respawn --clear src/app.ts",
-    "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/app.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@types/node": "^22.15.29",
-    "rimraf": "^6.0.1",
-    "ts-node": "^10.9.2",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.8.3"
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "dev:typeorm": "USE_TYPEORM=true npm run dev",
+    "dev:mongoose": "USE_TYPEORM=false npm run dev"
   },
   "dependencies": {
-    "mongoose": "^8.15.1",
-    "pg": "^8.16.0",
-    "typeorm": "^0.3.24"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "typeorm": "^0.3.17",
+    "pg": "^8.11.3",
+    "mongoose": "^7.5.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/cors": "^2.8.13",
+    "@types/node": "^20.4.5",
+    "@types/pg": "^8.10.2",
+    "typescript": "^5.1.6",
+    "ts-node-dev": "^2.0.0"
   }
 }

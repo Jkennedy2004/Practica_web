@@ -1,11 +1,11 @@
 import { Repository } from 'typeorm';
-import { InventarioProducto } from '../../../../domain/entities/InventarioProducto';
+import { InventarioProducto } from '../../../../domain/entities/inventarioProducto';
 import { IInventarioProductoRepository } from '../../../../domain/interfaces/IInventarioProductoRepository';
 import { InventarioProductoEntity } from '../entities/InventarioProductoEntity';
-import { AppDataSource } from '../../../database/typeorm-config';
+import { AppDataSource } from '../../database/typeorm-config';
 
 export class TypeORMInventarioProductoRepository implements IInventarioProductoRepository {
-  private repository: Repository<InventarioProductoEntity>;
+  private readonly repository: Repository<InventarioProductoEntity>;
 
   constructor() {
     this.repository = AppDataSource.getRepository(InventarioProductoEntity);
