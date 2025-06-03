@@ -4,7 +4,7 @@ import {
   Column,
   OneToMany,
 } from 'typeorm';
-import { ReporteLogistico } from './reporteLogistico';
+import { ReporteLogistico } from './entrega';
 
 @Entity()
 export class Repartidor {
