@@ -1,0 +1,13 @@
+{
+  "name": "semana2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+     "dev": "tsnd --respawn --clear src/app.ts",
+  "build": "rimraf ./dist && tsc",
+  "start": "npm run build && node dist/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

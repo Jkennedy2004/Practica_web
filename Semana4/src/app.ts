@@ -1,21 +1,29 @@
 import { inicializar } from "./database"
-import {consultar, insertar, modificar} from "./metodo"
+import { consulta1, consultar, eliminar, eliminarVista, insertar, insertarVista, modificar } from "./metodo"
 
-console.log("Hola Mundo")
-async function main() {
+
+console.log ("HOLA MUNDO")
+
+ async function  main (){  
     await inicializar()
-    const usuarioNuevo = await insertar("Jhon", "jg374997@gmial.com")
+    const usuarioNuevo = await insertar( "Alberto", "cd1232@gmail.com")
     console.log(usuarioNuevo)
-    const usuario = await consultar()
-    console.log(usuario)
+    const usuarios = await consultar()
+    console.log(usuarios)
+    const vistaNueva= await insertarVista("usuario",usuarioNuevo.id)
+    console.log(vistaNueva)
     const usuarioI = await consulta1(usuarioNuevo.id)
     console.log(usuarioI)
-    const usuariomodificados = await modificar(usuarioNuevo.id, "Kenedy", "Jkg374997@gmail.com")
-    console.log(usuariomodificados)
-    const usuarioEliminado = await eliminar(usuarioNuevo.id)
-    console.log(usuarioEliminado)
-    const vistaNueva = await insertarVista("Usuario", usuarioNuevo.id)
-    console.log(vistaNueva)
+    const usuariosmodificados = await modificar(usuarioNuevo.id, "jeremy", "jeremy.2022@gmail.com")
+    console.log(usuariosmodificados) 
+    const vistaeliminada =await eliminarVista(vistaNueva!.id)
+    console.log(vistaeliminada)
+    const usuarioeliminado = await eliminar(usuarioNuevo.id)
+    console.log(usuarioeliminado)
+    
 }
 
+
 main()
+
+ 
