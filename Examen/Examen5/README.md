@@ -181,3 +181,39 @@ En la sexta imagen se encuentra el detalle de una publicación que permite desca
 ![I6](./clean/public/assets/images/I6.png)
 
 Tener en cuenta que los docentes pueden colaborar en conjunto con otros para crear una obra científica literaria.
+
+
+1. Publicación (PublicacionEntity)
+Descripción:
+Esta entidad representa una publicación científica, como un artículo de revista, capítulo de libro, informe técnico o similar. Contiene atributos clave como el título de la publicación, resumen, fecha de publicación, autores relacionados, área de conocimiento y el journal o revista en la que fue publicada.
+
+Justificación:
+Se trata de la entidad central del sistema, ya que todas las demás giran en torno a la gestión de publicaciones. Su inclusión es esencial para permitir el registro, búsqueda y categorización de la producción científica institucional.
+
+2. Autor (AutorEntity)
+Descripción:
+Esta entidad representa a un autor o investigador que participa en una o varias publicaciones. Se almacenan datos como su nombre completo, correo electrónico institucional y la facultad a la que pertenece.
+
+Justificación:
+Es fundamental para establecer relaciones de autoría entre publicaciones y personas. Su inclusión permite realizar búsquedas por autor, calcular métricas de productividad académica y vincular la producción con áreas específicas de la institución.
+
+3. Facultad (FacultadEntity)
+Descripción:
+La entidad Facultad agrupa a los autores según su unidad académica de adscripción. Contiene información como el nombre de la facultad y un identificador institucional.
+
+Justificación:
+Permite clasificar las publicaciones por dependencia académica, facilitando la generación de reportes internos, evaluaciones institucionales y estadísticas por facultad. También es útil para identificar las áreas más productivas dentro de la universidad.
+
+4. Área de Conocimiento (AreaEntity)
+Descripción:
+Representa el área de conocimiento o disciplina académica a la que pertenece una publicación. Incluye información como el nombre del área (por ejemplo: Ciencias Naturales, Ingeniería, Ciencias Sociales, etc.).
+
+Justificación:
+Su incorporación permite categorizar las publicaciones según su campo temático, lo que facilita la navegación, la segmentación y los análisis por disciplina. Además, es útil para vincular investigaciones con líneas estratégicas de la institución.
+
+5. Revista (JournalEntity)
+Descripción:
+La entidad Journal representa la revista científica en la que fue publicada una determinada publicación. Contiene datos como el nombre de la revista, ISSN, país de publicación, cuartil u otros indicadores de impacto.
+
+Justificación:
+Es importante para evaluar la calidad y el alcance de las publicaciones científicas. También permite filtrar o agrupar las publicaciones por medio de difusión y establecer vínculos con bases de datos externas o rankings académicos.
