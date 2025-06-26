@@ -1,0 +1,85 @@
+### Crear Usuario
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+  "nombre": "Jhon",
+  "apellido": "Pérez",
+  "correo": "Jhon.perez@example.com",
+  "rol": "cliente"
+}
+
+
+### Obtener todos los usuarios
+GET http://localhost:3000/usuario
+
+### Obtener usuario por ID
+GET http://localhost:3000/usuario/2
+
+### Actualizar usuario
+PATCH http://localhost:3000/usuario/2
+Content-Type: application/json
+
+{
+  "nombre": "Juan Pérez"
+}
+
+### Eliminar usuario
+DELETE http://localhost:3000/usuario/3
+
+### Crear Producto
+POST http://localhost:3000/producto
+Content-Type: application/json
+
+{
+  "nombre": "Café Premium",
+  "descripcion": "Colombiano 500g",
+  "precio": 7.99,
+  "stock": 100
+}
+
+### Obtener todos los productos
+GET http://localhost:3000/producto
+
+### Obtener producto por ID
+GET http://localhost:3000/producto/1
+
+### Actualizar producto
+PATCH http://localhost:3000/producto/1
+Content-Type: application/json
+
+{
+  "stock": 90
+}
+
+### Eliminar producto
+DELETE http://localhost:3000/producto/2
+
+### Crear Pedido
+POST http://localhost:3000/pedido
+Content-Type: application/json
+
+{
+  "usuarioId": 2,
+  "productoId": 1,
+  "cantidad": 2,
+  "fecha": "2025-06-29T11:00:00Z",
+  "total": 15.98
+}
+
+### Obtener todos los pedidos
+GET http://localhost:3000/pedido
+
+### Obtener pedido por ID
+GET http://localhost:3000/pedido/2
+
+### Actualizar pedido
+PATCH http://localhost:3000/pedido/2
+Content-Type: application/json
+
+{
+  "cantidad": 3
+}
+
+### Eliminar pedido
+DELETE http://localhost:3000/pedido/2
