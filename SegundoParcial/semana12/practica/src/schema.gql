@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Turista {
+  """Example field (placeholder)"""
+  id: ID!
+
+  """Example field (placeholder)"""
+  nombre: String!
+
+  """Example field (placeholder)"""
+  email: String!
+}
+
+type Query {
+  turistas: [Turista!]!
+  turista(id: String!): Turista!
+}
+
+type Mutation {
+  createTurista(createTuristaInput: CreateTuristaInput!): Turista!
+  updateTurista(updateTuristaInput: UpdateTuristaInput!): Turista!
+  removeTurista(id: String!): Turista!
+}
+
+input CreateTuristaInput {
+  """Example field (placeholder)"""
+  nombre: String!
+
+  """Example field (placeholder)"""
+  email: String!
+}
+
+input UpdateTuristaInput {
+  """Example field (placeholder)"""
+  nombre: String
+
+  """Example field (placeholder)"""
+  email: String
+  id: ID!
+}
