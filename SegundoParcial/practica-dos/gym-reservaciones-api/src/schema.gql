@@ -1,0 +1,89 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Clase {
+  description: String!
+  id: Int!
+  instructor: Instructor!
+  instructorId: Int!
+  name: String!
+  schedule: String!
+}
+
+type Cliente {
+  clase: Clase
+  claseId: Int!
+  email: String!
+  id: Int!
+  membership: Boolean!
+  name: String!
+}
+
+input CreateClaseInput {
+  description: String!
+  instructorId: Int!
+  name: String!
+  schedule: String!
+}
+
+input CreateClienteInput {
+  claseId: Int!
+  email: String!
+  membership: Boolean!
+  name: String!
+}
+
+input CreateInstructorInput {
+  email: String!
+  name: String!
+  specialty: String!
+}
+
+type Instructor {
+  email: String!
+  id: Int!
+  name: String!
+  specialty: String!
+}
+
+type Mutation {
+  createClase(createClaseInput: CreateClaseInput!): Clase!
+  createCliente(createClienteInput: CreateClienteInput!): Cliente!
+  createInstructor(createInstructorInput: CreateInstructorInput!): Instructor!
+  removeClase(id: Int!): Clase!
+  removeCliente(id: Int!): Cliente!
+  removeInstructor(id: Int!): Instructor!
+  updateClase(id: Int!, updateClaseInput: UpdateClaseInput!): Clase!
+  updateCliente(id: Int!, updateClienteInput: UpdateClienteInput!): Cliente!
+  updateInstructor(id: Int!, updateInstructorInput: UpdateInstructorInput!): Instructor!
+}
+
+type Query {
+  clase(id: Int!): Clase!
+  clases: [Clase!]!
+  cliente(id: Int!): Cliente!
+  clientes: [Cliente!]!
+  instructor(id: Int!): Instructor!
+  instructors: [Instructor!]!
+}
+
+input UpdateClaseInput {
+  description: String
+  instructorId: Int
+  name: String
+  schedule: String
+}
+
+input UpdateClienteInput {
+  claseId: Int
+  email: String
+  membership: Boolean
+  name: String
+}
+
+input UpdateInstructorInput {
+  email: String
+  name: String
+  specialty: String
+}
